@@ -5,7 +5,7 @@ import requests
 import os
 
 from requests.exceptions import RequestException
-from subprocess import check_output, CalledProcessError
+from subprocess import check_output, CalledProcessError, TimeoutExpired
 from prometheus_client import start_http_server, Counter
 
 METRICS_PORT = int(os.environ.get("METRICS_PORT", "9000"))
@@ -26,7 +26,7 @@ http_failures.labels(HTTP_URL).inc(0)
 def test_getent():
     try:
         check_output(["getent", "hosts", GETENT_HOST], timeout=GETENT_TIMEOUT)
-    except CalledProcessError:
+    except (CalledProcessError, TimeoutExpired):
         getent_failures.labels(GETENT_HOST).inc()
     finally:
         getent_total.labels(GETENT_HOST).inc()
