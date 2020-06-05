@@ -91,6 +91,7 @@ objects:
   metadata:
     labels:
       app: network-check
+      name: network-check
     name: network-check
   spec:
     ports:
