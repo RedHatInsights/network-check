@@ -22,6 +22,7 @@ http_failures = Counter("netcheck_http_failures", "Failed http calls", ["url"])
 getent_failures.labels(GETENT_HOST).inc(0)
 http_failures.labels(HTTP_URL).inc(0)
 
+
 def test_getent():
     try:
         check_output(["getent", "hosts", GETENT_HOST], timeout=GETENT_TIMEOUT)

@@ -1,7 +1,11 @@
 certifi==2020.4.5.1
 chardet==3.0.4
+flake8==3.8.2
 idna==2.9
+mccabe==0.6.1
 prometheus-client==0.8.0
 public==2019.4.13
+pycodestyle==2.6.0
+pyflakes==2.2.0
 requests==2.23.0
 urllib3==1.25.9
