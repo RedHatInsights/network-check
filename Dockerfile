@@ -1,4 +1,4 @@
-FROM registry.redhat.io/ubi8/python-38
+FROM registry.access.redhat.com/ubi8/python-38
 
 COPY requirements.txt app.py /
 
