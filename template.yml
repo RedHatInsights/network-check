@@ -9,8 +9,10 @@ parameters:
   description: Hostname to run 'getent host' against
 - name: HTTP_TIMEOUT
   description: Timeout in seconds of HTTP GET
+  value: "2"
 - name: GETENT_TIMEOUT
   description: Timeout in seconds of getent command
+  value: "2"
 - name: IMAGE
   value: quay.io/cloudservices/network-check
 - name: IMAGE_TAG
