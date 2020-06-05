@@ -86,3 +86,19 @@ objects:
         dnsPolicy: ClusterFirst
         restartPolicy: Always
         terminationGracePeriodSeconds: 30
+- apiVersion: v1
+  kind: Service
+  metadata:
+    labels:
+      app: network-check
+    name: network-check
+  spec:
+    ports:
+    - name: prom
+      port: 9000
+      protocol: TCP
+      targetPort: 9000
+    selector:
+      name: network-check
+    sessionAffinity: None
+    type: ClusterIP
